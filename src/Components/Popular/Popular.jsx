@@ -2,7 +2,7 @@ import React from 'react'
 import './Popular.css'
 
 import data_product from '../Asset/data';
-import Item from '../Item/item';
+import Item from '../Item/Item';
 const Popular = () => {
     return (
         <div className="popular">
