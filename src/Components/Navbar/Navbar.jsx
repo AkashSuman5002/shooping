@@ -46,4 +46,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar9 
+export default Navbar
