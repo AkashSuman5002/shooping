@@ -9,7 +9,6 @@ const Navbar = () => {
    
   const [menu, setmenu] = useState("shop")
   const{getTotalCartItems, cartItem}= useContext(ShopContext);
-// console.log(cartItem, cartItem.length);
 
 
 
@@ -47,4 +46,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar9 

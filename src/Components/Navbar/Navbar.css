@@ -78,65 +78,51 @@
     font-size: 14px;
     background: red;
     color: white;
+}
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  background-color: #f8f9fa; 
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.nav-menu li {
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.nav-menu li:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
+}
+
+.nav-menu li.active {
+  background: rgba(0, 150, 255, 0.2); 
+  color: #007bff; 
+}
+
+.nav-menu li.active::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: rgba(0, 150, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 150, 255, 0.2);
+  z-index: -1;
 } 
 
-/* .nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-menu li {
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: background 0.3s ease;
-  }
-  
-  .nav-menu li.active {
-    background: rgba(200, 200, 200, 0.3); /* Light-colored ellipse */
+
   
   
-    .nav-menu {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-        padding: 10px;
-        background-color: #f8f9fa; /* Light gray background */
-        border-radius: 10px;
-        justify-content: center;
-      }
-      
-      .nav-menu li {
-        padding: 12px 24px;
-        cursor: pointer;
-        border-radius: 20px;
-        font-size: 16px;
-        font-weight: 500;
-        transition: background 0.3s ease, transform 0.2s ease;
-        position: relative;
-      }
-      
-      .nav-menu li:hover {
-        background: rgba(0, 0, 0, 0.05);
-        transform: scale(1.05);
-      }
-      
-      .nav-menu li.active {
-        background: rgba(0, 150, 255, 0.2); /* Light blue ellipse */
-        color: #007bff; /* Blue text color */
-        font-weight: bold;
-      }
-      
-      .nav-menu li.active::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 20px;
-        background: rgba(0, 150, 255, 0.1);
-        box-shadow: 0 4px 10px rgba(0, 150, 255, 0.2);
-        z-index: -1;
-      }
+    
       
 
     

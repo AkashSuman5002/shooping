@@ -1,4 +1,4 @@
-/* .loginsignup{
+.loginsignup{
     width: 100%;
     height: 80vh;
     background: #fce3fe;
@@ -62,8 +62,8 @@
     font-weight: 600;
 }
  
- */
- .loginsignup {
+
+.loginsignup {
     width: 100%;
     height: 100vh;
     background: linear-gradient(135deg, #fce3fe, #ff99cc);
@@ -157,4 +157,4 @@
     color: #ff1a75;
     cursor: pointer;
     font-weight: bold;
-}
+} 
