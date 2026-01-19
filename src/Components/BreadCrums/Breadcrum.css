@@ -1,25 +1,47 @@
-/* .breadcrum{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 60px 170px;
-    color: #5e5e5e;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: 'Poppins', sans-serif;
-    text-transform: capitalize;
-    
-} */
 .breadcrum {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin: 50px 150px;
-    color: #4a4a4a;
-    font-size: 17px;
-    font-weight: 600;
+    gap: 10px;
+    margin: 40px 30px;
+    color: #666;
+    font-size: 15px;
+    font-weight: 500;
     font-family: 'Poppins', sans-serif;
     text-transform: capitalize;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 8px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.breadcrum span {
+    color: #999;
+    margin: 0 5px;
+}
+
+.breadcrum a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrum a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+/* ====== Responsive Media Queries ====== */
+
+@media (max-width: 768px) {
+    .breadcrum {
+        margin: 30px 15px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .breadcrum {
+        margin: 20px 10px;
+        font-size: 12px;
+        gap: 8px;
+    }
 }

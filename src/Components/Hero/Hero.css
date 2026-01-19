@@ -1,59 +1,207 @@
-.hero{
+.hero {
     height: 100vh;
     display: flex;
-    background: linear-gradient(180deg, #fde1ff,#e1ffea22 60%);
+    background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
+    align-items: center;
+    padding: 0 50px;
+    gap: 40px;
 }
-.hero-left{
+
+.hero-left {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    padding-left: 180px;
     line-height: 1.1;
-    
-}
-.hero-left h2{
-    font-size:26px;
-    font-weight: 600;
-    color: black;
-}
-.hero-left p{
-    font-size: 70px;
-    color: black;
-    font-weight: 700;
+    min-width: 0;
 }
 
-.hero-hand-icon{
+.hero-left h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.hero-left p {
+    font-size: 70px;
+    color: #000;
+    font-weight: 800;
+    margin: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-hand-icon {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
 }
-.hero-hand-icon img{
+
+.hero-hand-icon img {
     width: 80px;
-    
+    height: 80px;
+    object-fit: contain;
 }
-.hero-latest-btn{
+
+.hero-latest-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
-    width: 300px;
+    width: 320px;
     height: 65px;
-    border-radius: 75px;
+    border-radius: 50px;
     margin-top: 30px;
-    background: #ef3030;
-    color: #f9f8f8;
-    font-size: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 18px;
     font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
-.hero-right{
+
+.hero-latest-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.hero-latest-btn:active {
+    transform: translateY(0);
+}
+
+.hero-right {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 0;
 }
+
 .hero-right img {
-    width: 85%; /* Adjust the percentage as needed to make the image smaller */
+    width: 85%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ====== Responsive Media Queries ====== */
+
+@media (max-width: 1200px) {
+    .hero {
+        height: auto;
+        min-height: 70vh;
+        padding: 40px 30px;
+        flex-direction: column;
+    }
+
+    .hero-left {
+        gap: 15px;
+    }
+
+    .hero-left h2 {
+        font-size: 22px;
+    }
+
+    .hero-left p {
+        font-size: 50px;
+    }
+
+    .hero-latest-btn {
+        width: 280px;
+        height: 55px;
+        font-size: 16px;
+    }
+
+    .hero-right img {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 60vh;
+        padding: 30px 20px;
+    }
+
+    .hero-left {
+        gap: 12px;
+    }
+
+    .hero-left h2 {
+        font-size: 18px;
+    }
+
+    .hero-left p {
+        font-size: 40px;
+    }
+
+    .hero-hand-icon {
+        gap: 10px;
+    }
+
+    .hero-hand-icon img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .hero-latest-btn {
+        width: 250px;
+        height: 50px;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    .hero-right img {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 20px 15px;
+        gap: 20px;
+    }
+
+    .hero-left {
+        gap: 10px;
+    }
+
+    .hero-left h2 {
+        font-size: 14px;
+    }
+
+    .hero-left p {
+        font-size: 28px;
+        line-height: 1;
+    }
+
+    .hero-hand-icon {
+        gap: 8px;
+    }
+
+    .hero-hand-icon img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .hero-latest-btn {
+        width: 100%;
+        max-width: 200px;
+        height: 45px;
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .hero-right img {
+        max-width: 200px;
+    }
 }
 

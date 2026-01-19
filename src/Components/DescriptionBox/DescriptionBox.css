@@ -1,48 +1,19 @@
-/* .descriptionbox{
-    margin: 120px 170px; 
-}
-.descriptionbox-navigator{
-    display: flex;
-
-}
-.descriptionbox-nav-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid #d0d0d0;
-    font-size: 16px;
-    font-weight: 600;
-    width: 171px;
-    height: 70px;
-}
-.descriptionbox-nav-box.fade{
-    background: #FBFBFB;
-    color: #555;
-
-}
-.descriptionbox-description{
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    border:1px solid #D0D0D0;
-    padding: 48px;
-    padding-bottom: 70px;
-} */
- /* Improved Page Description Styles */
+/* Description Box Styles */
 .descriptionbox {
-    margin: 60px auto; /* Centering and reducing margin for better responsiveness */
+    margin: 60px auto;
     max-width: 1200px;
-    padding: 25px;
-    font-family: 'Poppins', sans-serif; /* Modern font */
+    padding: 30px;
+    font-family: 'Poppins', sans-serif;
     color: #333;
 }
 
 .descriptionbox-navigator {
     display: flex;
-    justify-content: flex-start; /* Align to the left */
+    justify-content: flex-start;
     gap: 20px;
-    flex-wrap: wrap; /* Ensuring responsiveness */
+    flex-wrap: wrap;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
 }
 
 .descriptionbox-nav-box {
@@ -50,34 +21,40 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    border: 1px solid #d0d0d0;
-    font-size: 17px;
-    font-weight: 600;
-    width: 185px;
-    height: 75px;
-    border-radius: 10px; /* Softer edges */
+    border: 2px solid #ddd;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 12px 20px;
+    border-radius: 8px;
     background: white;
     cursor: pointer;
-    transition: background 0.3s, border-color 0.3s; /* Smooth hover effect */
+    transition: all 0.3s ease;
+    color: #666;
 }
 
 .descriptionbox-nav-box:hover {
-    background: #f0f0f0;
-    border-color: #bbb;
+    background: rgba(102, 126, 234, 0.05);
+    border-color: #667eea;
+    color: #667eea;
 }
 
 .descriptionbox-nav-box.fade {
-    background: #fbfbfb;
-    color: #555;
-    opacity: 0.9;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #667eea;
 }
 
 .descriptionbox-description {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    border: 1px solid #d0d0d0;
-    padding: 40px;
+    gap: 20px;
+    border: 1px solid #ddd;
+    padding: 35px;
+    border-radius: 10px;
+    background: white;
+    margin-top: 20px;
+    line-height: 1.6;
+}
     border-radius: 12px;
     background: #fafafa;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
