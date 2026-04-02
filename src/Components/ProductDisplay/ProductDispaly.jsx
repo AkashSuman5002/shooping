@@ -1,4 +1,4 @@
-import React, { use, useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./ProductDispaly.css";
 import star_icon from "../Asset/star_icon.png";
 import star_dull_icon from "../Asset/star_dull_icon.png";
@@ -6,6 +6,20 @@ import { ShopContext } from "../../Context/ShopContext";
 const productdisplay = (props) => {
   const { product } = props;
   const { addToCart } = useContext(ShopContext);
+  const [selectedSize, setSelectedSize] = useState('');
+  const [sizeError, setSizeError] = useState('');
+  const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+
+  const handleAddToCart = () => {
+    if (!selectedSize) {
+      setSizeError('Please select a size before adding to cart.');
+      return;
+    }
+
+    setSizeError('');
+    addToCart(product.id, selectedSize);
+  };
+
   return (
     <div className="productdisplay">
       <div className="productdisplay-left">
@@ -42,19 +56,24 @@ const productdisplay = (props) => {
         </div>
         <div className="productdisplay-right-size">
           <h1>Select Size</h1>
-          <div className="productdisplay-right-size">
-            <div>S</div>
-            <div>M</div>
-            <div>L</div>
-            <div>XL</div>
-            <div>XXL</div>
+          <div className="productdisplay-right-size-options">
+            {sizes.map((size) => (
+              <button
+                type="button"
+                key={size}
+                className={selectedSize === size ? 'size-option size-option-selected' : 'size-option'}
+                onClick={() => {
+                  setSelectedSize(size);
+                  setSizeError('');
+                }}
+              >
+                {size}
+              </button>
+            ))}
           </div>
+          {sizeError ? <p className="size-error-text">{sizeError}</p> : null}
         </div>
-        <button
-          onClick={() => {
-            addToCart(product.id);
-          }}
-        >
+        <button onClick={handleAddToCart}>
           ADD TO CART
         </button>
         <p className="productdisplay-right-category">

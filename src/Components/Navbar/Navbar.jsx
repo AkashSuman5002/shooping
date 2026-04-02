@@ -60,23 +60,40 @@
 
 // export default Navbar
 
-import React, { useState, useContext, useRef } from 'react';
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useLocation } from "react-router-dom";
 import './Navbar.css';
 import logo from '../Asset/logo.png';
 import cart_icon from '../Asset/cart_icon.png';
 import { ShopContext } from '../../Context/ShopContext';
 import nav_dropdown from '../Asset/dropdown_icon.png';
+import { AuthContext } from '../../Context/AuthApiContext';
 
 const Navbar = () => {
+  const location = useLocation();
   const [menu, setMenu] = useState("shop");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { getTotalCartItems } = useContext(ShopContext);
-  const menuRef = useRef();
-  const dropdownRef = useRef();
+  const { currentUser, logout } = useContext(AuthContext);
 
-  const dropdown_toggle = (e) => {
-    menuRef.current.classList.toggle("nav-menu-visible");
-    dropdownRef.current.classList.toggle("open");
+  useEffect(() => {
+    const currentMenu = {
+      '/': 'shop',
+      '/mens': 'mens',
+      '/womens': 'womens',
+      '/kids': 'kids',
+    }[location.pathname];
+
+    if (currentMenu) {
+      setMenu(currentMenu);
+    }
+
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
+  const handleMenuClick = (value) => {
+    setMenu(value);
+    setIsMenuOpen(false);
   };
 
   return (
@@ -87,32 +104,43 @@ const Navbar = () => {
       </div>
 
       <img
-        ref={dropdownRef}
         src={nav_dropdown}
         alt='dropdown'
         className='nav-dropdown'
-        onClick={dropdown_toggle}
+        onClick={() => setIsMenuOpen((value) => !value)}
+        aria-label='Toggle navigation menu'
+        aria-expanded={isMenuOpen}
       />
 
-      <ul ref={menuRef} className="nav-menu">
-        <li onClick={() => setMenu("shop")} className={menu === "shop" ? "active" : ""}>
+      <ul className={isMenuOpen ? "nav-menu nav-menu-visible" : "nav-menu"}>
+        <li onClick={() => handleMenuClick("shop")} className={menu === "shop" ? "active" : ""}>
           <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Shop</Link>
         </li>
-        <li onClick={() => setMenu("mens")} className={menu === "mens" ? "active" : ""}>
+        <li onClick={() => handleMenuClick("mens")} className={menu === "mens" ? "active" : ""}>
           <Link to="/mens" style={{ textDecoration: 'none', color: 'inherit' }}>Men</Link>
         </li>
-        <li onClick={() => setMenu("womens")} className={menu === "womens" ? "active" : ""}>
+        <li onClick={() => handleMenuClick("womens")} className={menu === "womens" ? "active" : ""}>
           <Link to="/womens" style={{ textDecoration: 'none', color: 'inherit' }}>Women</Link>
         </li>
-        <li onClick={() => setMenu("kids")} className={menu === "kids" ? "active" : ""}>
+        <li onClick={() => handleMenuClick("kids")} className={menu === "kids" ? "active" : ""}>
           <Link to="/kids" style={{ textDecoration: 'none', color: 'inherit' }}>Kids</Link>
         </li>
       </ul>
 
       <div className="nav-login-cart">
-        <Link to="/login" style={{ textDecoration: 'none' }}>
-          <button>Login</button>
-        </Link>
+        {currentUser ? (
+          <div className="nav-auth-area">
+            <span className="nav-user-pill">Hi, {currentUser.name}</span>
+            <Link to="/profile" style={{ textDecoration: 'none' }}>
+              <button type="button" className="nav-profile-button">Profile</button>
+            </Link>
+            <button type="button" className="nav-logout-button" onClick={logout}>Logout</button>
+          </div>
+        ) : (
+          <Link to="/login" style={{ textDecoration: 'none' }}>
+            <button>Login</button>
+          </Link>
+        )}
         <Link to="/cart" style={{ textDecoration: 'none' }}>
           <img src={cart_icon} alt='cart' />
         </Link>

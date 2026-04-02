@@ -106,6 +106,21 @@
     color: #764ba2;
 }
 
+.loginsignup-message {
+    margin-top: 14px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.loginsignup-error {
+    color: #d92d20;
+}
+
+.loginsignup-success {
+    color: #067647;
+}
+
 .loginsignup-agree {
     display: flex;
     align-items: center;

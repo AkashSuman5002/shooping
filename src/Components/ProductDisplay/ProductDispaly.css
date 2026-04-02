@@ -114,7 +114,13 @@
     flex-wrap: wrap;
 }
 
-.productdisplay-right-size div {
+.productdisplay-right-size-options {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.size-option {
     padding: 10px 16px;
     background: white;
     border: 2px solid #ddd;
@@ -122,11 +128,25 @@
     cursor: pointer;
     transition: all 0.3s;
     font-weight: 500;
+    color: #1a1a1a;
 }
 
-.productdisplay-right-size div:hover {
+.size-option:hover {
     background: rgba(102, 126, 234, 0.1);
     border-color: #667eea;
+}
+
+.size-option-selected {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: #667eea;
+    color: #fff;
+}
+
+.size-error-text {
+    margin: 8px 0 0;
+    color: #d93025;
+    font-size: 13px;
+    font-weight: 600;
 }
 
 /* Button */
@@ -227,7 +247,7 @@
         font-size: 24px;
     }
 
-    .productdisplay-right-size div {
+    .size-option {
         padding: 8px 12px;
         font-size: 12px;
     }

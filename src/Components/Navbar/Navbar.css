@@ -81,6 +81,22 @@
   flex-shrink: 0;
 }
 
+.nav-auth-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-user-pill {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(102, 126, 234, 0.1);
+  color: #3d4fc2;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 .nav-login-cart button {
   width: 140px;
   height: 50px;
@@ -102,6 +118,20 @@
 
 .nav-login-cart button:active {
   transform: translateY(0);
+}
+
+.nav-logout-button {
+  width: 110px;
+}
+
+.nav-profile-button {
+  width: 110px;
+  background: linear-gradient(135deg, #ff4141 0%, #ff6b6b 100%);
+  border-color: #ff4141;
+}
+
+.nav-profile-button:hover {
+  box-shadow: 0 6px 20px rgba(255, 65, 65, 0.4);
 }
 
 .nav-login-cart img {
@@ -159,6 +189,10 @@
     font-size: 14px;
   }
 
+  .nav-logout-button {
+    width: 100px;
+  }
+
   .nav-login-cart img {
     width: 32px;
   }
@@ -187,6 +221,10 @@
     width: 100px;
     height: 40px;
     font-size: 13px;
+  }
+
+  .nav-logout-button {
+    width: 88px;
   }
 
   .nav-login-cart {
@@ -258,6 +296,10 @@
     font-size: 12px;
   }
 
+  .nav-logout-button {
+    width: 84px;
+  }
+
   .nav-login-cart img {
     width: 28px;
   }
@@ -293,6 +335,15 @@
     width: 75px;
     height: 35px;
     font-size: 11px;
+  }
+
+  .nav-auth-area {
+    gap: 8px;
+  }
+
+  .nav-user-pill {
+    font-size: 11px;
+    padding: 8px 10px;
   }
 
   .nav-login-cart img {
